@@ -11,8 +11,8 @@ class NewsList extends StatelessWidget {
       physics: NeverScrollableScrollPhysics(),
       itemBuilder: (context, index) {
         return PokeNews(
-          title: "Pokémon Rumble Rush Arrives Soon",
-          time: "15 May 2019",
+          title: "口袋王大作战",
+          time: "2019年10月24日",
           thumbnail: Image.asset("assets/images/thumbnail.png"),
         );
       },
