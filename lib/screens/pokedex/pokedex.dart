@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
+import 'package:pokedex/widgets/pokemon_card.dart';
 import 'package:pokedex/data/pokemons.dart';
 import 'package:pokedex/screens/pokedex/widgets/generation_modal.dart';
 import 'package:pokedex/screens/pokedex/widgets/search_modal.dart';
 import 'package:pokedex/widgets/fab.dart';
 import 'package:pokedex/widgets/poke_container.dart';
-import 'package:pokedex/widgets/pokemon_card.dart';
 
 class Pokedex extends StatefulWidget {
   @override
@@ -23,7 +23,8 @@ class _PokedexState extends State<Pokedex> with SingleTickerProviderStateMixin {
       duration: Duration(milliseconds: 260),
     );
 
-    final curvedAnimation = CurvedAnimation(curve: Curves.easeInOut, parent: _controller);
+    final curvedAnimation =
+        CurvedAnimation(curve: Curves.easeInOut, parent: _controller);
     _animation = Tween<double>(begin: 0, end: 1).animate(curvedAnimation);
 
     super.initState();
