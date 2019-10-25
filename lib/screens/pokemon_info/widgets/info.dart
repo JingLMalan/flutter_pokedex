@@ -5,7 +5,6 @@ import 'package:pokedex/widgets/animated_rotation.dart';
 import 'package:pokedex/widgets/animated_slide.dart';
 import 'package:pokedex/widgets/pokemon_type.dart';
 import 'package:provider/provider.dart';
-
 import 'decoration_box.dart';
 
 class PokemonOverallInfo extends StatefulWidget {
