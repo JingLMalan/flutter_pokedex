@@ -10,7 +10,8 @@ class PokemonAbout extends StatelessWidget {
       children: <Widget>[
         Text(
           text,
-          style: TextStyle(fontSize: 16, height: 0.8, fontWeight: FontWeight.bold),
+          style:
+              TextStyle(fontSize: 16, height: 0.8, fontWeight: FontWeight.bold),
         ),
         SizedBox(height: 22),
         if (child != null) child,
@@ -129,7 +130,8 @@ class PokemonAbout extends StatelessWidget {
       child: AspectRatio(
         aspectRatio: 2.253,
         child: Container(
-          decoration: BoxDecoration(color: AppColors.teal, borderRadius: BorderRadius.circular(12)),
+          decoration: BoxDecoration(
+              color: AppColors.teal, borderRadius: BorderRadius.circular(12)),
         ),
       ),
     );
@@ -171,7 +173,9 @@ class PokemonAbout extends StatelessWidget {
 
         return SingleChildScrollView(
           padding: EdgeInsets.symmetric(vertical: 19, horizontal: 27),
-          physics: scrollable ? BouncingScrollPhysics() : NeverScrollableScrollPhysics(),
+          physics: scrollable
+              ? BouncingScrollPhysics()
+              : NeverScrollableScrollPhysics(),
           child: child,
         );
       },
