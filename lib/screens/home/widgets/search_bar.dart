@@ -27,7 +27,7 @@ class SearchBar extends StatelessWidget {
           Expanded(
             child: TextFormField(
               decoration: InputDecoration(
-                hintText: "Search Pokemon, Move, Ability etc",
+                hintText: "搜索口袋王，移动，能力...",
                 hintStyle: TextStyle(
                   fontSize: 14,
                   color: AppColors.grey,
