@@ -12,7 +12,8 @@ class PokemonOverallInfo extends StatefulWidget {
   _PokemonOverallInfoState createState() => _PokemonOverallInfoState();
 }
 
-class _PokemonOverallInfoState extends State<PokemonOverallInfo> with TickerProviderStateMixin {
+class _PokemonOverallInfoState extends State<PokemonOverallInfo>
+    with TickerProviderStateMixin {
   static const double _appBarHorizontalPadding = 28.0;
   static const double _appBarTopPadding = 60.0;
   static const double _appBarBottomPadding = 22.0;
@@ -29,10 +30,12 @@ class _PokemonOverallInfoState extends State<PokemonOverallInfo> with TickerProv
 
   @override
   void initState() {
-    _slideController = AnimationController(vsync: this, duration: Duration(milliseconds: 360));
+    _slideController =
+        AnimationController(vsync: this, duration: Duration(milliseconds: 360));
     _slideController.forward();
 
-    _rotateController = AnimationController(vsync: this, duration: Duration(milliseconds: 5000));
+    _rotateController = AnimationController(
+        vsync: this, duration: Duration(milliseconds: 5000));
     _rotateController.repeat();
 
     _pageController = PageController(viewportFraction: 0.6);
@@ -47,11 +50,15 @@ class _PokemonOverallInfoState extends State<PokemonOverallInfo> with TickerProv
     });
 
     WidgetsBinding.instance.addPostFrameCallback((_) {
-      final RenderBox targetTextBox = _targetTextKey.currentContext.findRenderObject();
-      final Offset targetTextPosition = targetTextBox.localToGlobal(Offset.zero);
+      final RenderBox targetTextBox =
+          _targetTextKey.currentContext.findRenderObject();
+      final Offset targetTextPosition =
+          targetTextBox.localToGlobal(Offset.zero);
 
-      final RenderBox currentTextBox = _currentTextKey.currentContext.findRenderObject();
-      final Offset currentTextPosition = currentTextBox.localToGlobal(Offset.zero);
+      final RenderBox currentTextBox =
+          _currentTextKey.currentContext.findRenderObject();
+      final Offset currentTextPosition =
+          currentTextBox.localToGlobal(Offset.zero);
 
       textDiffLeft = targetTextPosition.dx - currentTextPosition.dx;
       textDiffTop = targetTextPosition.dy - currentTextPosition.dy;
@@ -112,7 +119,8 @@ class _PokemonOverallInfoState extends State<PokemonOverallInfo> with TickerProv
 
   Widget _buildPokemonName() {
     final cardScrollController = Provider.of<AnimationController>(context);
-    final fadeAnimation = Tween(begin: 1.0, end: 0.0).animate(cardScrollController);
+    final fadeAnimation =
+        Tween(begin: 1.0, end: 0.0).animate(cardScrollController);
 
     return Padding(
       padding: EdgeInsets.symmetric(horizontal: 26),
@@ -173,7 +181,8 @@ class _PokemonOverallInfoState extends State<PokemonOverallInfo> with TickerProv
 
   Widget _buildPokemonTypes() {
     final cardScrollController = Provider.of<AnimationController>(context);
-    final fadeAnimation = Tween(begin: 1.0, end: 0.0).animate(cardScrollController);
+    final fadeAnimation =
+        Tween(begin: 1.0, end: 0.0).animate(cardScrollController);
 
     return AnimatedFade(
       animation: fadeAnimation,
@@ -279,15 +288,18 @@ class _PokemonOverallInfoState extends State<PokemonOverallInfo> with TickerProv
   @override
   Widget build(BuildContext context) {
     final cardScrollController = Provider.of<AnimationController>(context);
-    final dottedAnimation = Tween(begin: 1.0, end: 0.0).animate(cardScrollController);
+    final dottedAnimation =
+        Tween(begin: 1.0, end: 0.0).animate(cardScrollController);
 
     final screenWidth = MediaQuery.of(context).size.width;
     final screenHeight = MediaQuery.of(context).size.height;
 
     final pokeSize = screenWidth * 0.448;
 
-    final pokeTop = -(pokeSize / 2 - (IconTheme.of(context).size / 2 + _appBarTopPadding));
-    final pokeRight = -(pokeSize / 2 - (IconTheme.of(context).size / 2 + _appBarHorizontalPadding));
+    final pokeTop =
+        -(pokeSize / 2 - (IconTheme.of(context).size / 2 + _appBarTopPadding));
+    final pokeRight = -(pokeSize / 2 -
+        (IconTheme.of(context).size / 2 + _appBarHorizontalPadding));
 
     return Stack(
       children: [
